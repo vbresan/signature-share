@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory android:title="@string/Canvas">
+    
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/Title"
+			android:title="@string/Title"
+			android:key="@string/key_Title" 
+			android:defaultValue="@string/default_value_Title"
+		/>
+		
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/Width"
+			android:title="@string/Width"
+			android:key="@string/key_Width" 
+			android:defaultValue="@string/default_value_Width"
+		/>
+		
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/Height"
+			android:title="@string/Height"
+			android:key="@string/key_Height" 
+			android:defaultValue="@string/default_value_Height"
+		/>
+ 
+	    <CheckBoxPreference 
+	    	android:key="@string/key_Crop" 
+	    	android:title="@string/Crop" 
+	    	android:defaultValue="@string/default_value_Crop"
+	    />
+	    
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/BackgroundColor"
+			android:title="@string/BackgroundColor"
+			android:key="@string/key_BackgroundColor" 
+			android:maxLength="8" 
+			android:defaultValue="@string/default_value_BackgroundColor"
+		/>
+		
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/BackgroundImage"
+			android:title="@string/BackgroundImage"
+			android:key="@string/key_BackgroundImage" 
+			android:defaultValue="@string/default_value_BackgroundImage"
+		/>
+	    
+	</PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/Pen">
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/StrokeWidth"
+			android:title="@string/StrokeWidth"
+			android:key="@string/key_StrokeWidth" 
+			android:numeric="integer" 
+			android:maxLength="2" 
+			android:defaultValue="@string/default_value_StrokeWidth"
+		/>
+		<EditTextPreference 
+			android:negativeButtonText="@android:string/cancel" 
+			android:positiveButtonText="@android:string/ok" 
+			android:dialogTitle="@string/StrokeColor"
+			android:title="@string/StrokeColor"
+			android:key="@string/key_StrokeColor" 
+			android:maxLength="8" 
+			android:defaultValue="@string/default_value_StrokeColor"
+		/>
+	</PreferenceCategory>    
+	
+    <PreferenceCategory android:title="@string/Misc">
+        <CheckBoxPreference 
+	    	android:key="@string/key_ShowWarning" 
+	    	android:title="@string/ShowWarning" 
+	    	android:defaultValue="@string/default_value_ShowWarning"
+	    />
+    </PreferenceCategory>
+</PreferenceScreen>

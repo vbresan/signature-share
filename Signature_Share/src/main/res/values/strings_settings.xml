@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="Settings">Settings</string>
+	
+	<string name="Canvas">Canvas</string>
+	<string name="Pen">Pen</string>
+	<string name="Misc">Misc</string>
+	
+	<string name="Title">Title</string>
+	<string name="Width">Width</string>
+	<string name="Height">Height</string>
+	<string name="Crop">Crop</string>
+	<string name="BackgroundColor">Background Color</string>
+	<string name="StrokeWidth">Stroke Width</string>
+	<string name="StrokeColor">Stroke Color</string>
+	<string name="ShowWarning">Show warning for image view</string>
+	<string name="BackgroundImage">Background Image</string>
+	
+	<string name="key_Title">key_Title</string>
+	<string name="key_Width">key_Width</string>
+	<string name="key_Height">key_Height</string>
+	<string name="key_Crop">key_Crop</string>
+	<string name="key_BackgroundColor">key_BackgroundColor</string>
+	<string name="key_StrokeWidth">key_StrokeWidth</string>
+	<string name="key_StrokeColor">key_StrokeColor</string>
+	<string name="key_ShowWarning">key_ShowWarning</string>
+	<string name="key_BackgroundImage">key_BackgroundImage</string>
+	
+	<string name="default_value_Title">Signature Capture</string>
+	<string name="default_value_Width">0</string>
+	<string name="default_value_Height">0</string>
+	<string name="default_value_Crop">false</string>
+	<string name="default_value_BackgroundColor">00000000</string>
+	<string name="default_value_StrokeWidth">8</string>
+	<string name="default_value_StrokeColor">FF000000</string>
+	<string name="default_value_ShowWarning">true</string>
+	<string name="default_value_BackgroundImage"></string>
+	<!-- 
+	<string name="default_value_BackgroundImage">http://binarysolutions.biz/logo.png</string>
+	-->
+	
+</resources>

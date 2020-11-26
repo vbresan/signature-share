@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Signature Share</string>
+    <string name="app_folder">Signature_Share</string>
+    
+    <string name="Error">Error</string>
+    
+    <string name="LibraryMissing">Library missing</string>
+    <string name="LibraryMissingMessage">In order to capture signatures you need to install missing library.</string>
+    <string name="Install">Install</string>
+    
+    <string name="ErrorFolder">Can not open or create folder.</string>
+    <string name="CaptureNewSignature">Capture new signature</string>
+    
+    <string name="View">View</string>
+    <string name="Share">Share</string>
+    <string name="Rename">Rename</string>
+    <string name="Delete">Delete</string>
+    
+    <string name="PNG">.png</string>
+    
+    <string name="WarningMessage">Some android image viewers do not show transparent background properly. For this reason your captured signature might be shown as completely black image. However, if you open the same image on your PC you will notice that nothing is wrong and that it has been saved properly.</string>
+    <string name="DoNotShow">Do not show this message again</string>
+    
+</resources>

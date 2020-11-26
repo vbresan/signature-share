@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/View" android:id="@+id/contextMenuItemView" />
+    <item android:title="@string/Share" android:id="@+id/contextMenuItemShare" />
+    <item android:title="@string/Rename" android:id="@+id/contextMenuItemRename" />
+    <item android:title="@string/Delete" android:id="@+id/contextMenuItemDelete" />
+</menu>

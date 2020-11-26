@@ -1,0 +1,85 @@
+2.5 (2019.07.15)
+
+* removing Flurry analytics
+
+
+2.4 (2014.09.30)
+
+* adding support for background images
+
+
+2.3.2 (2014.02.17)
+
+* updating library installation dialog
+* handling invalid dimension values
+
+
+2.3.1 (2014.01.28)
+
+* displaying warning message inside scroll view
+
+
+2.3.1 (2014.01.28)
+
+* displaying warning message inside scroll view
+
+
+2.3 (2013.07.30)
+
+* built with Android 4.2
+* removing ACRA
+* updating 3rd party libraries
+* showing menu items in action bar
+* updating copyright year
+* allowing installation on SD card
+* using 8 as default stroke width
+* adding option to change signature background color (in app settings)
+* displaying warning message before starting external viewer app
+
+
+2.2 (2012.01.31)
+
+* Using new stroke color input parameter
+* Adding ACRA
+
+
+2.1 (2012.01.06)
+
+* Downloading Signature Capture APK directly from the server.
+* Adding options menu icons. 
+* Adding new launcher icon. 
+
+
+2.0 (2011.08.05)
+
+* adding preferences
+
+
+1.5.3 (2011.08.05)
+
+* adding Android Application Auto Updates (AAAU) Library
+
+
+1.5.2 (2011.08.04)
+
+* adding Flurry analytics
+
+
+1.5.2 (2011.08.04)
+
+* removing updates library
+
+
+1.5.1 (2011.03.08)
+
+* bug fix (default file names)
+
+
+1.5 (2011.03.02)
+
+* adding support for renaming files with captured signatures
+
+
+1.4 (2011.02.12)
+
+* initial release

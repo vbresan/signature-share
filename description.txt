@@ -1,0 +1,16 @@
+Capture and share electronic signatures. 
+
+Sign by touching the screen. Press and hold for context menu ('View', 'Share', 'Rename', 'Delete').
+
+
+Depends on digital signature capture library. You will be prompted for it's installation later on.
+
+For unlimited signature capturing check the library instructions.
+
+For other commercial purposes (like signing PDF documents etc.) contact support e-mail.
+
+Application has been released under Apache License 2.0 and it's source code is available here: 
+http://code.google.com/p/signature-share/
+
+Report all issues here:
+http://code.google.com/p/signature-share/issues/list
