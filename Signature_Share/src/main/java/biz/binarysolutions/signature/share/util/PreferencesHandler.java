@@ -3,6 +3,7 @@ package biz.binarysolutions.signature.share.util;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import biz.binarysolutions.signature.share.R;
 
 /**
@@ -11,8 +12,8 @@ import biz.binarysolutions.signature.share.R;
  */
 public class PreferencesHandler {
 	
-	private Activity activity;
-	private SharedPreferences preferences;
+	private final Activity activity;
+	private final SharedPreferences preferences;
 
 	/**
 	 * 
@@ -45,12 +46,15 @@ public class PreferencesHandler {
 		String defaultValue = activity.getString(R.string.default_value_StrokeWidth);
 		
 		String stringValue = preferences.getString(key, defaultValue);
-		
-		try {
-			return Integer.parseInt(stringValue);
-		} catch (NumberFormatException e) {
-			return Integer.parseInt(defaultValue);
+		if (stringValue != null) {
+			try {
+				return Integer.parseInt(stringValue);
+			} catch (NumberFormatException e) {
+				// do nothing
+			}
 		}
+
+		return Integer.parseInt(defaultValue);
 	}
 	
 	/**
@@ -132,7 +136,7 @@ public class PreferencesHandler {
 	public void setShowWarning(boolean showWarning) {
 		
 		String key = activity.getString(R.string.key_ShowWarning);
-		preferences.edit().putBoolean(key, showWarning).commit();
+		preferences.edit().putBoolean(key, showWarning).apply();
 	}
 
 	/**

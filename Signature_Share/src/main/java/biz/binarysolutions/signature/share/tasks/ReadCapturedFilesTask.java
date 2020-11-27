@@ -1,17 +1,23 @@
 package biz.binarysolutions.signature.share.tasks;
 
-import java.io.File;
-
 import android.os.AsyncTask;
-import biz.binarysolutions.signature.share.MainActivity;
+
+import java.io.File;
 
 /**
  * 
  *
  */
 public class ReadCapturedFilesTask extends AsyncTask<String, Void, File[]> {
+
+	/**
+	 *
+	 */
+	public interface Callback {
+		void onCapturedFilesAvailable(File[] readFiles);
+	}
 	
-	private MainActivity activity;
+	private final Callback callback;
 	
 	/**
 	 * 
@@ -53,12 +59,13 @@ public class ReadCapturedFilesTask extends AsyncTask<String, Void, File[]> {
 
 	/**
 	 * 
-	 * @param activity
+	 * @param callback
 	 */
-	public ReadCapturedFilesTask(MainActivity activity) {
-		this.activity = activity;
+	public ReadCapturedFilesTask(Callback callback) {
+		this.callback = callback;
 	}
 
+	@SuppressWarnings("UnnecessaryLocalVariable")
 	@Override
 	protected File[] doInBackground(String... args) {
 
@@ -70,6 +77,6 @@ public class ReadCapturedFilesTask extends AsyncTask<String, Void, File[]> {
 	
 	@Override
 	protected void onPostExecute(File[] files) {
-		activity.onCapturedFilesAvailable(files);
+		callback.onCapturedFilesAvailable(files);
 	}
 }

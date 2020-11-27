@@ -23,8 +23,8 @@ public class DimensionConverter {
 	 */
 	private static final class DimensionEntry {
 		
-        String name;
-        int type;
+        final String name;
+        final int    type;
 
         /**
          * 

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="5dp" >
+    android:padding="5dp"
+    >
 
     <EditText
         android:id="@+id/EditTextFileName"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1.0"
-        android:textSize="25sp" >
-    </EditText>
+        android:textSize="25sp"
+        android:inputType="text"
+    />
 
     <TextView
         android:id="@+id/TextView01"
@@ -19,7 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text="@string/PNG"
-        android:textSize="25sp" >
-    </TextView>
+        android:textSize="25sp"
+    />
 
 </LinearLayout>

@@ -19,7 +19,6 @@ public class AboutActivity extends Activity {
 	
 	/**
 	 * 
-	 * @param context
 	 * @return
 	 */
 	private PackageInfo getPackageInfo() {
@@ -73,7 +72,7 @@ public class AboutActivity extends Activity {
 	 */
 	private void displayApplicationText() {
 	
-		TextView textView = (TextView) findViewById(R.id.Application);
+		TextView textView = findViewById(R.id.Application);
 		
 		String text = getApplicationText();
 		textView.setText(text);		
@@ -84,7 +83,7 @@ public class AboutActivity extends Activity {
 	 */
 	private void setButtonListener() {
 
-		Button button = (Button) findViewById(R.id.Button);
+		Button button = findViewById(R.id.Button);
 		button.setOnClickListener(new OnClickListener() {
 
 			@Override

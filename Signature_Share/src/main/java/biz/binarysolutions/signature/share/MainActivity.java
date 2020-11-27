@@ -38,7 +38,8 @@ import biz.binarysolutions.signature.share.util.PreferencesHandler;
  * 
  *
  */
-public class MainActivity extends ListActivity {
+public class MainActivity extends ListActivity
+	implements ReadCapturedFilesTask.Callback {
 
 	//TODO: externalize
 	private static final String LIBRARY_URL  = "http://goo.gl/LqSN6";
@@ -48,8 +49,8 @@ public class MainActivity extends ListActivity {
 	
 	private String signaturesFolder = null;
 	
-	private ArrayList<File>    files = new ArrayList<File>();
-	private ArrayAdapter<File> adapter;
+	private final ArrayList<File>    files = new ArrayList<>();
+	private 	  ArrayAdapter<File> adapter;
 	
 	private PreferencesHandler preferencesHandler;
 	
@@ -71,7 +72,7 @@ public class MainActivity extends ListActivity {
 	    PackageInfo    pi = null;
 	    
 	    try {
-			pi = pm.getPackageInfo("biz.binarysolutions.signature", 0);
+			pi = pm.getPackageInfo(PACKAGE_NAME, 0);
 		} catch (NameNotFoundException e) {
 			// do nothing
 		}
@@ -142,7 +143,7 @@ public class MainActivity extends ListActivity {
 		LayoutInflater inflater = getLayoutInflater();
 		View view = inflater.inflate(R.layout.dialog_rename, null);
 		
-		final EditText editText = (EditText) view.findViewById(R.id.EditTextFileName);
+		final EditText editText = view.findViewById(R.id.EditTextFileName);
 		final String   fileName = FileUtil.stripExtension(file.getName()); 
 		editText.setText(fileName);
 		
@@ -158,22 +159,19 @@ public class MainActivity extends ListActivity {
 			public void onClick(DialogInterface dialog, int which) {
 				
 				String newFileName = editText.getText().toString();
-				if (newFileName != null) {
-					if (!newFileName.equals(fileName) && 
-						 newFileName.length() > 0) {
-						
-						newFileName += getString(R.string.PNG);
-						
-						File from = new File(file.getParent(), file.getName());
-						File to   = new File(file.getParent(), newFileName);
-						
-						try {
-							if (from.renameTo(to)) {
-								readCapturedFiles();
-							}
-						} catch (Exception e) {
-							// do nothing
+				if (!newFileName.equals(fileName) && newFileName.length() > 0) {
+
+					newFileName += getString(R.string.PNG);
+
+					File from = new File(file.getParent(), file.getName());
+					File to   = new File(file.getParent(), newFileName);
+
+					try {
+						if (from.renameTo(to)) {
+							readCapturedFiles();
 						}
+					} catch (Exception e) {
+						// do nothing
 					}
 				}
 			}
@@ -217,7 +215,7 @@ public class MainActivity extends ListActivity {
 		LayoutInflater inflater = getLayoutInflater();
 		View view = inflater.inflate(R.layout.dialog_warning, null);
 		
-		CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBoxShowWarning);
+		CheckBox checkBox = view.findViewById(R.id.checkBoxShowWarning);
 		checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
@@ -274,7 +272,7 @@ public class MainActivity extends ListActivity {
 	 */
 	private void setButtonListener() {
 		
-		Button button = (Button) findViewById(R.id.ButtonCaptureNewSignature);
+		Button button = findViewById(R.id.ButtonCaptureNewSignature);
 		button.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -415,15 +413,14 @@ public class MainActivity extends ListActivity {
 		}
 	}
 
-	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        adapter = new ArrayAdapter<File>(
-			this, 
-			android.R.layout.simple_list_item_1, 
+        adapter = new ArrayAdapter<>(
+			this,
+			android.R.layout.simple_list_item_1,
 			files
 		);
 		setListAdapter(adapter);

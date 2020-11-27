@@ -2,6 +2,7 @@ package biz.binarysolutions.signature.share;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
@@ -41,14 +42,13 @@ public class ApplicationSettings extends PreferenceActivity
 	 * @return
 	 */
 	private int getMaxScreenDimension() {
-		
-		Display display = getWindowManager().getDefaultDisplay();
-		
-		int width  = display.getWidth();
-    	int height = display.getHeight();
-    	int max    = (width > height) ? width : height;
 
-    	return max;
+		Point   size    = new Point();
+		Display display = getWindowManager().getDefaultDisplay();
+
+		display.getSize(size);
+
+    	return Math.max(size.x, size.y);
 	}
 
 	/**

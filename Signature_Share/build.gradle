@@ -8,6 +8,8 @@ android {
         applicationId "biz.binarysolutions.signature.share"
         minSdkVersion 21
         targetSdkVersion 29
+        versionCode 19
+        versionName "3.0"
     }
 
     buildTypes {

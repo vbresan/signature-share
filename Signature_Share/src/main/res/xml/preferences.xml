@@ -64,9 +64,9 @@
 			android:positiveButtonText="@android:string/ok" 
 			android:dialogTitle="@string/StrokeWidth"
 			android:title="@string/StrokeWidth"
-			android:key="@string/key_StrokeWidth" 
-			android:numeric="integer" 
-			android:maxLength="2" 
+			android:key="@string/key_StrokeWidth"
+			android:inputType="number"
+			android:maxLength="2"
 			android:defaultValue="@string/default_value_StrokeWidth"
 		/>
 		<EditTextPreference 
