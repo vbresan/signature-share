@@ -19,7 +19,3 @@
 #   public *;
 #}
 
-
-# Flurry
--keep class com.flurry.** { *; }
--dontwarn com.flurry.**
