@@ -505,10 +505,6 @@ public class MainActivity extends ListActivity
         	startActivity(new Intent(this, ApplicationSettings.class));
         	return true;
 	 	
-	    case R.id.menuItemAbout:
-	    	startActivity(new Intent(this, AboutActivity.class));
-	    	return true;
-	    	
 	    default:
 	    	return super.onOptionsItemSelected(item);
 	    }
