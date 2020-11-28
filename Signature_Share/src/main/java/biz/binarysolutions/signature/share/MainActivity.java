@@ -43,10 +43,6 @@ import biz.binarysolutions.signature.share.util.PreferencesHandler;
 public class MainActivity extends ListActivity
 	implements ReadCapturedFilesTask.Callback {
 
-	//TODO: externalize
-	private static final String LIBRARY_URL  = "http://goo.gl/LqSN6";
-	private static final String PACKAGE_NAME = "biz.binarysolutions.signature";
-	
 	private static final int CAPTURE_REQUEST_CODE = 0;
 	
 	private String signaturesFolder = null;
@@ -74,7 +70,7 @@ public class MainActivity extends ListActivity
 	    PackageInfo    pi = null;
 	    
 	    try {
-			pi = pm.getPackageInfo(PACKAGE_NAME, 0);
+			pi = pm.getPackageInfo(getString(R.string.package_name), 0);
 		} catch (NameNotFoundException e) {
 			// do nothing
 		}
@@ -105,7 +101,7 @@ public class MainActivity extends ListActivity
 	 */
 	private void installLibrary() {
 		
-		Uri    uri    = Uri.parse(LIBRARY_URL);
+		Uri    uri    = Uri.parse(getString(R.string.library_url));
 		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 
 		startActivity(intent);
