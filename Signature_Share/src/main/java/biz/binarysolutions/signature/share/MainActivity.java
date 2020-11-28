@@ -461,30 +461,25 @@ public class MainActivity extends ListActivity
 		
 		AdapterContextMenuInfo info = 
 			(AdapterContextMenuInfo) item.getMenuInfo();
-		
-		switch (item.getItemId()) {
 
-		case R.id.contextMenuItemView:
+		int id = item.getItemId();
+		if (id == R.id.contextMenuItemView) {
 			if (shouldDisplayWarningDialog()) {
 				displayWarningDialog(info.id);
 			} else {
 				viewFile(info.id);
 			}
 			return true;
-
-		case R.id.contextMenuItemShare:
+		} else if (id == R.id.contextMenuItemShare) {
 			shareFile(info.id);
 			return true;
-
-		case R.id.contextMenuItemRename:
+		} else if (id == R.id.contextMenuItemRename) {
 			renameFile(info.id);
-			return true;			
-			
-		case R.id.contextMenuItemDelete:
+			return true;
+		} else if (id == R.id.contextMenuItemDelete) {
 			deleteFile(info.id);
 			return true;
-
-		default:
+		} else {
 			return super.onContextItemSelected(item);
 		}
 	}
@@ -499,15 +494,12 @@ public class MainActivity extends ListActivity
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
-	 	switch (item.getItemId()) {
-	 	
-	 	case R.id.menuItemSettings:
+	 	if (item.getItemId() == R.id.menuItemSettings) {
         	startActivity(new Intent(this, ApplicationSettings.class));
         	return true;
-	 	
-	    default:
-	    	return super.onOptionsItemSelected(item);
-	    }
+	    } else {
+			return super.onOptionsItemSelected(item);
+		}
 	}	
 
 	@Override
