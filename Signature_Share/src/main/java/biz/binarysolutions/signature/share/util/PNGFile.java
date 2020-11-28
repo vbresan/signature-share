@@ -1,5 +1,7 @@
 package biz.binarysolutions.signature.share.util;
 
+import androidx.annotation.NonNull;
+
 import java.io.File;
 
 /**
@@ -17,6 +19,7 @@ public class PNGFile extends File {
 		super(file.getAbsolutePath());
 	}
 	
+	@NonNull
 	@Override
 	public String toString() {
 		return getName();
