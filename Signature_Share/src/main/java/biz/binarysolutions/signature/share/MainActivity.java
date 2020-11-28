@@ -3,6 +3,7 @@ package biz.binarysolutions.signature.share;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Locale;
 
 import android.app.AlertDialog;
@@ -363,6 +364,8 @@ public class MainActivity extends ListActivity
 		for (File file : readFiles) {
 			files.add(new PNGFile(file));
 		}
+
+		Collections.sort(files);
 		
 		adapter.notifyDataSetChanged();
 	}
