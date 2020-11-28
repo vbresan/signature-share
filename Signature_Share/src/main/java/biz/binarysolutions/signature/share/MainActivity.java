@@ -2,6 +2,8 @@ package biz.binarysolutions.signature.share;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -262,8 +264,21 @@ public class MainActivity extends ListActivity
 	 * 
 	 */
 	private String getFileName() {
-		
-		String fileName = "" + (int) (System.currentTimeMillis() / 1000);
+
+		Calendar c = Calendar.getInstance();
+
+		String fileName = String.format(
+			Locale.getDefault(),
+			"%04d%02d%02d_%02d%02d%02d_%03d",
+			c.get(Calendar.YEAR),
+			c.get(Calendar.MONTH) + 1,
+			c.get(Calendar.DAY_OF_MONTH),
+			c.get(Calendar.HOUR_OF_DAY),
+			c.get(Calendar.MINUTE),
+			c.get(Calendar.SECOND),
+			c.get(Calendar.MILLISECOND)
+		);
+
         return signaturesFolder + File.separator + fileName + ".png";
 	}
 
