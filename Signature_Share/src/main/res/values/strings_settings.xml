@@ -26,7 +26,7 @@
 	<string name="key_ShowWarning">key_ShowWarning</string>
 	<string name="key_BackgroundImage">key_BackgroundImage</string>
 	
-	<string name="default_value_Title">Signature Capture</string>
+	<string name="default_value_Title">Signature Capture by Binary Solutions</string>
 	<string name="default_value_Width">0</string>
 	<string name="default_value_Height">0</string>
 	<string name="default_value_Crop">false</string>
