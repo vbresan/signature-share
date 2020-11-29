@@ -500,16 +500,22 @@ public class MainActivity extends ListActivity
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+
 		MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.options_menu, menu);
-	    return true;
+
+		for (int i = 0; i < menu.size(); i++) {
+			menu.getItem(i).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+		}
+
+		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 	 	if (item.getItemId() == R.id.menuItemSettings) {
-        	startActivity(new Intent(this, ApplicationSettings.class));
+        	startActivity(new Intent(this, PreferenceActivity.class));
         	return true;
 	    } else {
 			return super.onOptionsItemSelected(item);

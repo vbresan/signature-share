@@ -32,6 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ApplicationSettings" />
+        <activity
+            android:name=".PreferenceActivity"
+            android:theme="@style/Theme.AppCompat"
+        />
     </application>
 </manifest> 

@@ -1,7 +1,9 @@
 package biz.binarysolutions.signature.share.util;
 
 import android.app.Activity;
+import android.graphics.Point;
 import android.util.DisplayMetrics;
+import android.view.Display;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,8 +18,10 @@ import java.util.regex.Pattern;
  * 
  */
 public class DimensionConverter {
-	
-	/**
+
+    private final Activity activity;
+
+    /**
 	 * 
 	 *
 	 */
@@ -68,7 +72,7 @@ public class DimensionConverter {
 	 * @param dimension
 	 * @return
 	 */
-	private static DimensionEntry parseDimension(String dimension) {
+	private DimensionEntry parseDimension(String dimension) {
 		
 		if (dimension == null) {
 			return sDimensions[0];
@@ -84,6 +88,25 @@ public class DimensionConverter {
 
         return null;
     }
+
+    /**
+     *
+     */
+    private DisplayMetrics getDisplayMetrics() {
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        return metrics;
+    }
+
+    /**
+     *
+     * @param activity
+     */
+    public DimensionConverter(Activity activity) {
+        this.activity = activity;
+    }
 	
 
 	/**
@@ -92,18 +115,12 @@ public class DimensionConverter {
 	 * Some string examples: 300dp, 200dip, 450px, 60mm, 2.3in, etc.
 	 * 
 	 * @param string string to convert to number of pixels
-	 * @param displayMetrics device display metrics
 	 * @return number of pixels
 	 * @throws Exception thrown on invalid input string
 	 * 
 	 * @see <a href="http://developer.android.com/reference/android/util/DisplayMetrics.html">android.util.DisplayMetrics</a>
 	 */
-	public static int stringToPixel
-		(
-			String         string, 
-			DisplayMetrics displayMetrics
-		) 
-		throws Exception {
+	public int stringToPixel(String string) throws Exception {
 		
         // remove the space before and after
 		String trimmed = string.trim();
@@ -145,6 +162,9 @@ public class DimensionConverter {
             if (dimension != null) {
                 // convert the value into pixel based on the dimension type
                 // This is similar to TypedValue.applyDimension()
+
+                DisplayMetrics displayMetrics = getDisplayMetrics();
+                
                 switch (dimension.type) {
                 case COMPLEX_UNIT_PX:
                     // do nothing, value is already in px
@@ -171,17 +191,19 @@ public class DimensionConverter {
         }
 
         throw new Exception();
-	}	
-	
-	/**
-	 * 
-	 * @param activity
-	 */
-	public static DisplayMetrics getDisplayMetrics(Activity activity) {
-		
-		DisplayMetrics metrics = new DisplayMetrics();
-		activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
-		
-		return metrics;
-	}	
+	}
+
+    /**
+     *
+     * @return
+     */
+    public int getMaxScreenDimension() {
+
+        Point size      = new Point();
+        Display display = activity.getWindowManager().getDefaultDisplay();
+
+        display.getSize(size);
+
+        return Math.max(size.x, size.y);
+    }
 }

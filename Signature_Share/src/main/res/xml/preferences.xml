@@ -1,90 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+  	xmlns:app="http://schemas.android.com/apk/res-auto">
     
-    <PreferenceCategory android:title="@string/Canvas">
+    <PreferenceCategory app:title="@string/Canvas">
     
 		<EditTextPreference 
-			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@android:string/ok" 
-			android:dialogTitle="@string/Title"
-			android:title="@string/Title"
-			android:key="@string/key_Title" 
-			android:defaultValue="@string/default_value_Title"
+			app:negativeButtonText="@android:string/cancel" 
+			app:positiveButtonText="@android:string/ok" 
+			app:dialogTitle="@string/Title"
+			app:title="@string/Title"
+			app:key="@string/key_Title" 
+			app:defaultValue="@string/default_value_Title"
+			app:useSimpleSummaryProvider="true"
 		/>
 		
 		<EditTextPreference 
-			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@android:string/ok" 
-			android:dialogTitle="@string/Width"
-			android:title="@string/Width"
-			android:key="@string/key_Width" 
-			android:defaultValue="@string/default_value_Width"
+			app:negativeButtonText="@android:string/cancel" 
+			app:positiveButtonText="@android:string/ok" 
+			app:dialogTitle="@string/Width"
+			app:title="@string/Width"
+			app:key="@string/key_Width"
+			app:defaultValue="@string/default_value_Width"
+			app:useSimpleSummaryProvider="true"
 		/>
 		
 		<EditTextPreference 
-			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@android:string/ok" 
-			android:dialogTitle="@string/Height"
-			android:title="@string/Height"
-			android:key="@string/key_Height" 
-			android:defaultValue="@string/default_value_Height"
+			app:negativeButtonText="@android:string/cancel" 
+			app:positiveButtonText="@android:string/ok" 
+			app:dialogTitle="@string/Height"
+			app:title="@string/Height"
+			app:key="@string/key_Height" 
+			app:defaultValue="@string/default_value_Height"
+			app:useSimpleSummaryProvider="true"
 		/>
  
 	    <CheckBoxPreference 
-	    	android:key="@string/key_Crop" 
-	    	android:title="@string/Crop" 
-	    	android:defaultValue="@string/default_value_Crop"
+	    	app:key="@string/key_Crop" 
+	    	app:title="@string/Crop" 
+	    	app:defaultValue="@string/default_value_Crop"
 	    />
 	    
 		<EditTextPreference 
-			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@android:string/ok" 
-			android:dialogTitle="@string/BackgroundColor"
-			android:title="@string/BackgroundColor"
-			android:key="@string/key_BackgroundColor" 
-			android:maxLength="8" 
-			android:defaultValue="@string/default_value_BackgroundColor"
+			app:negativeButtonText="@android:string/cancel" 
+			app:positiveButtonText="@android:string/ok" 
+			app:dialogTitle="@string/BackgroundColor"
+			app:title="@string/BackgroundColor"
+			app:key="@string/key_BackgroundColor" 
+			android:maxLength="8"
+			app:defaultValue="@string/default_value_BackgroundColor"
+			app:useSimpleSummaryProvider="true"
 		/>
 		
 		<EditTextPreference 
-			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@android:string/ok" 
-			android:dialogTitle="@string/BackgroundImage"
-			android:title="@string/BackgroundImage"
-			android:key="@string/key_BackgroundImage" 
-			android:defaultValue="@string/default_value_BackgroundImage"
+			app:negativeButtonText="@android:string/cancel" 
+			app:positiveButtonText="@android:string/ok" 
+			app:dialogTitle="@string/BackgroundImage"
+			app:title="@string/BackgroundImage"
+			app:key="@string/key_BackgroundImage" 
+			app:defaultValue="@string/default_value_BackgroundImage"
+			app:useSimpleSummaryProvider="true"
 		/>
 	    
 	</PreferenceCategory>
     
-    <PreferenceCategory android:title="@string/Pen">
+    <PreferenceCategory app:title="@string/Pen">
 		<EditTextPreference 
-			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@android:string/ok" 
-			android:dialogTitle="@string/StrokeWidth"
-			android:title="@string/StrokeWidth"
-			android:key="@string/key_StrokeWidth"
+			app:negativeButtonText="@android:string/cancel" 
+			app:positiveButtonText="@android:string/ok" 
+			app:dialogTitle="@string/StrokeWidth"
+			app:title="@string/StrokeWidth"
+			app:key="@string/key_StrokeWidth"
 			android:inputType="number"
 			android:maxLength="2"
-			android:defaultValue="@string/default_value_StrokeWidth"
+			app:defaultValue="@string/default_value_StrokeWidth"
+			app:useSimpleSummaryProvider="true"
 		/>
 		<EditTextPreference 
-			android:negativeButtonText="@android:string/cancel" 
-			android:positiveButtonText="@android:string/ok" 
-			android:dialogTitle="@string/StrokeColor"
-			android:title="@string/StrokeColor"
-			android:key="@string/key_StrokeColor" 
-			android:maxLength="8" 
-			android:defaultValue="@string/default_value_StrokeColor"
+			app:negativeButtonText="@android:string/cancel" 
+			app:positiveButtonText="@android:string/ok" 
+			app:dialogTitle="@string/StrokeColor"
+			app:title="@string/StrokeColor"
+			app:key="@string/key_StrokeColor" 
+			android:maxLength="8"
+			app:defaultValue="@string/default_value_StrokeColor"
+			app:useSimpleSummaryProvider="true"
 		/>
 	</PreferenceCategory>    
 	
-    <PreferenceCategory android:title="@string/Misc">
+    <PreferenceCategory app:title="@string/Misc">
         <CheckBoxPreference 
-	    	android:key="@string/key_ShowWarning" 
-	    	android:title="@string/ShowWarning" 
-	    	android:defaultValue="@string/default_value_ShowWarning"
+	    	app:key="@string/key_ShowWarning" 
+	    	app:title="@string/ShowWarning" 
+	    	app:defaultValue="@string/default_value_ShowWarning"
 	    />
     </PreferenceCategory>
 </PreferenceScreen>
