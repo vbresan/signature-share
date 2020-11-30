@@ -433,9 +433,10 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
 		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
         adapter = new ArrayAdapter<>(
