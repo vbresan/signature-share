@@ -1,13 +1,6 @@
 package biz.binarysolutions.signature.share;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Locale;
-
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,6 +25,17 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Locale;
+
 import biz.binarysolutions.signature.share.tasks.ReadCapturedFilesTask;
 import biz.binarysolutions.signature.share.util.FileUtil;
 import biz.binarysolutions.signature.share.util.PNGFile;
@@ -41,7 +45,7 @@ import biz.binarysolutions.signature.share.util.PreferencesHandler;
  * 
  *
  */
-public class MainActivity extends ListActivity
+public class MainActivity extends AppCompatActivity
 	implements ReadCapturedFilesTask.Callback {
 
 	private static final int CAPTURE_REQUEST_CODE = 0;
@@ -430,6 +434,8 @@ public class MainActivity extends ListActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         setContentView(R.layout.main);
         
         adapter = new ArrayAdapter<>(
@@ -437,11 +443,13 @@ public class MainActivity extends ListActivity
 			android.R.layout.simple_list_item_1,
 			files
 		);
-		setListAdapter(adapter);
-        
+
+		ListView listView = findViewById(R.id.listViewFiles);
+		listView.setAdapter(adapter);
+
         signaturesFolder = getSignaturesFolder();
         setButtonListener();
-        registerForContextMenu(getListView());
+        registerForContextMenu(listView);
         
         if (! isCaptureLibraryInstalled()) {
         	displayInstallLibraryDialog();
