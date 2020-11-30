@@ -4,8 +4,10 @@
     package="biz.binarysolutions.signature.share"
 	android:installLocation="auto"
 	>
-      
-    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- TODO: once Signature Capture creates output folder (if missing)
+            replace this permission with READ_EXTERNAL_STORAGE
+    -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     
     <supports-screens

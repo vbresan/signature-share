@@ -27,7 +27,6 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import java.io.File;
@@ -39,24 +38,26 @@ import java.util.Locale;
 import biz.binarysolutions.signature.share.tasks.ReadCapturedFilesTask;
 import biz.binarysolutions.signature.share.util.FileUtil;
 import biz.binarysolutions.signature.share.util.PNGFile;
+import biz.binarysolutions.signature.share.util.PermissionActivity;
 import biz.binarysolutions.signature.share.util.PreferencesHandler;
 
 /**
  * 
  *
  */
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends PermissionActivity
 	implements ReadCapturedFilesTask.Callback {
 
 	private static final int CAPTURE_REQUEST_CODE = 0;
 	
-	private String signaturesFolder = null;
+	private String  signaturesFolder = null;
+	private boolean canAccessStorage = false;
 	
 	private final ArrayList<File>    files = new ArrayList<>();
 	private 	  ArrayAdapter<File> adapter;
 	
 	private PreferencesHandler preferencesHandler;
-	
+
 	/**
 	 * 
 	 * @return
@@ -355,6 +356,11 @@ public class MainActivity extends AppCompatActivity
 	 * 
 	 */
 	private void readCapturedFiles() {
+
+		if (!canAccessStorage || signaturesFolder == null) {
+			return;
+		}
+
 		new ReadCapturedFilesTask(this).execute(signaturesFolder);
 	}
 	
@@ -431,7 +437,13 @@ public class MainActivity extends AppCompatActivity
 		}
 	}
 
-    @Override
+	@Override
+	protected void onPermissionGranted(boolean isGranted) {
+		canAccessStorage = isGranted;
+		readCapturedFiles();
+	}
+
+	@Override
     public void onCreate(Bundle savedInstanceState) {
 
 		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
