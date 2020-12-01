@@ -28,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.FileProvider;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -381,6 +382,16 @@ public class MainActivity extends PermissionActivity
 	}
 
 	/**
+	 *
+	 * @return
+	 */
+	private Uri getUri(File file) {
+
+		String authority = getString(R.string.app_fileprovider);
+		return FileProvider.getUriForFile(this, authority, file);
+	}
+
+	/**
 	 * @param id 
 	 * 
 	 */
@@ -388,9 +399,10 @@ public class MainActivity extends PermissionActivity
 		
 		String title  = getString(R.string.View);
 		Intent intent = new Intent(Intent.ACTION_VIEW);
-        Uri    uri    = Uri.fromFile(files.get((int) id));
+        Uri    uri    = getUri(files.get((int) id));
         
         intent.setDataAndType(uri, "image/png");
+		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         
         startActivity(Intent.createChooser(intent, title));
 	}
@@ -402,10 +414,11 @@ public class MainActivity extends PermissionActivity
 		
 		String title  = getString(R.string.Share);
         Intent intent = new Intent(Intent.ACTION_SEND);
-        Uri    uri    = Uri.fromFile(files.get((int) id));
+        Uri    uri    = getUri(files.get((int) id));
         
         intent.setType("image/png");
         intent.putExtra(Intent.EXTRA_STREAM, uri);
+		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         
         startActivity(Intent.createChooser(intent, title));		
 	}

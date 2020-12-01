@@ -5,4 +5,5 @@
 <resources>
     <string name="package_name">&packagename;</string>
     <string name="library_url">market://details?id=&packagename;</string>
+    <string name="app_fileprovider">biz.binarysolutions.signature.share.fileprovider</string>
 </resources>
