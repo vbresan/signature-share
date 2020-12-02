@@ -1,0 +1,21 @@
+This app is for demonstration purposes only. Its functionality has been merged 
+with Signature Capture app that you can download from here:
+https://play.google.com/store/apps/details?id=biz.binarysolutions.signature
+
+This app has been released under Apache License 2.0 and it's source code is
+available here:
+https://github.com/vbresan/signature-share
+
+Report all issues here:
+https://github.com/vbresan/signature-share/issues
+
+
+Capture and share electronic signatures.
+Sign by touching the screen.
+Press and hold for context menu ('View', 'Share', 'Rename', 'Delete').
+
+Depends on digital signature capture library. You will be prompted for it's
+installation later on.
+
+For other commercial purposes (like signing PDF documents etc.) contact
+support e-mail.
