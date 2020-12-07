@@ -494,9 +494,9 @@ public class MainActivity extends PermissionActivity
 	@Override
 	public void onCreateContextMenu
 		(
-				ContextMenu     menu, 
-				View            view,
-				ContextMenuInfo menuInfo
+			ContextMenu     menu,
+			View            view,
+			ContextMenuInfo menuInfo
 		) {
 		super.onCreateContextMenu(menu, view, menuInfo);
 		
