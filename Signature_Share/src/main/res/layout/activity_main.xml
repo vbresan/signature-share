@@ -18,6 +18,7 @@
 		android:layout_width="fill_parent" 
 		android:id="@+id/ButtonCaptureNewSignature" 
 		android:text="@string/CaptureNewSignature"
+		style="?android:attr/buttonBarButtonStyle"
 	/>
 	
 </LinearLayout>

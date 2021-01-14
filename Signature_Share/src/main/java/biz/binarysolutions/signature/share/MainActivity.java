@@ -462,7 +462,7 @@ public class MainActivity extends PermissionActivity
 		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
         
         adapter = new ArrayAdapter<>(
 			this,
