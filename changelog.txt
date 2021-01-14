@@ -1,3 +1,8 @@
+3.0.1 (2021.01.14)
+
+* Layout improvements
+
+
 3.0 (2020.12.02)
 
 * major update
