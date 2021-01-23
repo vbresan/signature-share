@@ -537,12 +537,7 @@ public class MainActivity extends PermissionActivity
 
 		MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.options_menu, menu);
-
-		for (int i = 0; i < menu.size(); i++) {
-			menu.getItem(i).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-		}
-
-		return super.onCreateOptionsMenu(menu);
+	    return true;
 	}
 
 	@Override
